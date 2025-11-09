@@ -230,7 +230,7 @@ O gerenciamento de estado foi implementado através de classes que intermediam o
 
 ---
 
-▶️  Exclusão em ação
+▶️  Exclusão
 ![Image](https://github.com/user-attachments/assets/0315cb20-2d09-4c3f-bdbd-1bbd984f78c0)
 
 ---
