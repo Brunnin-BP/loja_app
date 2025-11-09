@@ -268,7 +268,8 @@ Além disso, esse tipo de teste ajuda a validar o comportamento assíncrono da t
 
 ---
 
-🧪 Teste de Unidade mais complexo: 
+🧪 Teste de Unidade mais complexo:
+# Teste 3 - Atualizar Produto
 🔍 O que ele testa:
 Esse teste verifica se o sistema consegue atualizar corretamente os dados de um produto existente. Ele envolve:
 • 	Criar um produto inicial.
