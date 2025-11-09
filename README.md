@@ -236,3 +236,72 @@ O gerenciamento de estado foi implementado através de classes que intermediam o
 ---
 
 # Parte 3
+🧪 Testes Automatizados — Validação de Lógica e Interface
+📘 Introdução
+
+Esta terceira etapa tem como foco garantir a qualidade e robustez do aplicativo por meio de testes automatizados utilizando a ferramenta nativa do Flutter:
+flutter_test.
+
+O objetivo é validar tanto a lógica de negócios (camada de repositório e persistência) quanto a interatividade da interface (camada de apresentação), assegurando que todas as funcionalidades críticas — como criar, listar, atualizar e deletar — funcionem conforme o esperado.
+
+---
+
+⚙️ 1. Preparação do Ambiente de Testes
+🔹 Estrutura de Diretórios
+
+O Flutter já cria, por padrão, uma pasta chamada test/ na raiz do projeto.
+Todos os arquivos de teste foram adicionados a essa estrutura
+
+---
+
+🧩 Teste de Widget mais relevante: 
+# Teste 5 – Exibir mensagem quando não há produtos
+🔍 O que ele testa:
+Esse teste verifica se a interface exibe corretamente a mensagem de estado vazio quando não há produtos cadastrados. Ele simula o carregamento da tela com uma lista vazia e espera encontrar o texto:
+`expect(find.text('Nenhum produto cadastrado'), findsOneWidget);`
+🧠 Por que é importante:
+Esse teste garante que o usuário receba feedback visual claro quando não há dados para mostrar. Isso evita:
+- Telas em branco sem explicação.
+- Confusão sobre se o app está carregando ou com erro.
+- Experiência negativa por falta de comunicação visual.
+Além disso, esse tipo de teste ajuda a validar o comportamento assíncrono da tela, como o uso de FutureBuilder, Provider e loading.
+
+---
+
+🧪 Teste de Unidade mais complexo: 
+🔍 O que ele testa:
+Esse teste verifica se o sistema consegue atualizar corretamente os dados de um produto existente. Ele envolve:
+• 	Criar um produto inicial.
+• 	Atualizar esse produto com novos dados.
+• 	Verificar se os dados atualizados foram persistidos corretamente.
+🧠 Por que é importante:
+Esse teste garante que a lógica de atualização no repositório está funcionando corretamente. Isso é essencial para evitar bugs como:
+• 	Dados antigos sendo exibidos após uma edição.
+• 	Atualizações não sendo salvas.
+• 	Produtos duplicados em vez de atualizados.
+Sem esse teste, o usuário poderia editar um produto e não ver a mudança refletida — o que comprometeria a confiança no sistema
+
+---
+
+🧼 Principais melhorias do Clean Code
+1. Legibilidade
+- Código fácil de entender por humanos.
+- Nomes de variáveis, funções e classes descritivos e consistentes.
+- Evita abreviações obscuras e siglas sem contexto.
+2. Simplicidade
+- Faz apenas o necessário, sem complexidade desnecessária.
+- Divide problemas grandes em partes pequenas e simples.
+- Evita sobreengenharia.
+
+---
+
+▶️ Execução do Teste
+![Image](https://github.com/user-attachments/assets/d8125afa-f0d5-4c47-baef-94361dac0519)
+
+---
+
+
+
+
+
+
