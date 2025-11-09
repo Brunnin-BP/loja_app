@@ -49,4 +49,10 @@ class Repository {
     final db = await dbHelper.database;
     await db.delete('vendas', where: 'id = ?', whereArgs: [id]);
   }
+  Future<void> limparDados() async {
+    final db = await dbHelper.database;
+    await db.delete('vendas');
+    await db.delete('produtos');
+  }
+
 }

@@ -15,7 +15,10 @@ class _ProdutosListScreenState extends State<ProdutosListScreen> {
   @override
   void initState() {
     super.initState();
-    Provider.of<ProdutoProvider>(context, listen: false).loadAll();
+    // Deferir o carregamento para o próximo frame
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      Provider.of<ProdutoProvider>(context, listen: false).loadAll();
+    });
   }
 
   @override
