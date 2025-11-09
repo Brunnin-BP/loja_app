@@ -1,4 +1,4 @@
-Parte 1
+# Parte 1
 # 🛍️ Loja App
 
 Aplicativo de controle de produtos e vendas desenvolvido em **Flutter** com **persistência local em SQLite (sqflite_common_ffi)**.  
@@ -85,7 +85,7 @@ Ele contém as seguintes tabelas:
     flutter run -d windows
 ---
 
-Parte 2
+# Parte 2
 
 📱 Aplicativo Flutter — Integração e Gerenciamento de Estado
 🧩 Descrição Geral
@@ -224,3 +224,6 @@ Future<void> loadAll() async {
 
 ▶️ Execução do Projeto
 ![Image](https://github.com/user-attachments/assets/a6d4ddb8-6e97-46ca-830d-eedef0c0a819)
+
+---
+# Parte 3
