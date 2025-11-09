@@ -256,8 +256,7 @@ Todos os arquivos de teste foram adicionados a essa estrutura
 
 🧩 Teste de Widget mais relevante: 
 # Teste 5 – Exibir mensagem quando não há produtos
-🔍 O que ele testa:
-Esse teste verifica se a interface exibe corretamente a mensagem de estado vazio quando não há produtos cadastrados. Ele simula o carregamento da tela com uma lista vazia e espera encontrar o texto:
+🔍 Esse teste verifica se a interface exibe corretamente a mensagem de estado vazio quando não há produtos cadastrados. Ele simula o carregamento da tela com uma lista vazia e espera encontrar o texto:
 `expect(find.text('Nenhum produto cadastrado'), findsOneWidget);`
 🧠 Por que é importante:
 Esse teste garante que o usuário receba feedback visual claro quando não há dados para mostrar. Isso evita:
@@ -270,8 +269,7 @@ Além disso, esse tipo de teste ajuda a validar o comportamento assíncrono da t
 
 🧪 Teste de Unidade mais complexo:
 # Teste 3 - Atualizar Produto
-🔍 O que ele testa:
-Esse teste verifica se o sistema consegue atualizar corretamente os dados de um produto existente. Ele envolve:
+🔍 Esse teste verifica se o sistema consegue atualizar corretamente os dados de um produto existente. Ele envolve:
 • 	Criar um produto inicial.
 • 	Atualizar esse produto com novos dados.
 • 	Verificar se os dados atualizados foram persistidos corretamente.
