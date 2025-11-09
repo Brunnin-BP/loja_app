@@ -1,7 +1,7 @@
 # Parte 1
 # 🛍️ Loja App
 
-Aplicativo de produtos e vendas desenvolvido em **Flutter** com **persistência local em SQLite.  
+Aplicativo de produtos e vendas desenvolvido em **Flutter** com persistência local em SQLite.  
 O objetivo do sistema é permitir o gerenciamento de produtos e o registro de vendas, funcionando tanto em ambiente **desktop (Windows)** quanto **mobile**.
 
 ---
