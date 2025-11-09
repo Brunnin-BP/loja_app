@@ -1,16 +1,89 @@
-# loja_app
+Parte 1
+# 🛍️ Loja App
 
-A new Flutter project.
+Aplicativo de controle de produtos e vendas desenvolvido em **Flutter** com **persistência local em SQLite (sqflite_common_ffi)**.  
+O objetivo do sistema é permitir o gerenciamento de produtos e o registro de vendas, funcionando tanto em ambiente **desktop (Windows)** quanto **mobile**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 📱 Funcionalidades
 
-A few resources to get you started if this is your first Flutter project:
+- Cadastro de produtos com:
+  - Nome  
+  - Categoria  
+  - Preço  
+  - Estoque  
+  - Descrição  
+- Listagem e exclusão de produtos  
+- Registro de vendas, vinculando o produto e o cliente  
+- Banco de dados local SQLite gerenciado por **sqflite_common_ffi**
+- Arquitetura organizada em camadas (`data`, `models`, `repository`)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🏗️ Tecnologias utilizadas
+
+| Tecnologia | Descrição |
+|-------------|------------|
+| Flutter | Framework principal para desenvolvimento multiplataforma |
+| Dart | Linguagem de programação |
+| Sqflite / Sqflite FFI | Persistência de dados local |
+| Path | Manipulação de caminhos para o banco de dados |
+| Android Studio | IDE utilizada no desenvolvimento |
+
+---
+
+## 🧱 Estrutura do projeto
+lib/
+├── data/
+│ ├── database_helper.dart
+│ └── repository.dart
+├── models/
+│ ├── produto.dart
+│ └── venda.dart
+├── main.dart
+
+---
+
+## ⚙️ Configuração do banco de dados
+
+O banco de dados é criado automaticamente na primeira execução.  
+Ele contém as seguintes tabelas:
+
+- **produtos**
+  - `id` (PRIMARY KEY)
+  - `nome`
+  - `categoria`
+  - `preco`
+  - `estoque`
+  - `descricao`
+- **vendas**
+  - `id` (PRIMARY KEY)
+  - `idProduto`
+  - `quantidade`
+  - `valorTotal`
+  - `data`
+  - `cliente`
+
+---
+
+## 🚀 Como executar o projeto
+
+1. **Clone o repositório:**
+   ```bash
+     git clone https://github.com/seuusuario/loja_app.git
+   
+2. Entre na pasta:
+   ```bash
+      cd loja_app.
+3. Instale as dependências:
+   ```bash
+     flutter pub get
+
+4. Execute o projeto (Windows):
+   ```bash
+    flutter run -d windows
+---
+
+Parte 2
+
