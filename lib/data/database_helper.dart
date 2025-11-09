@@ -16,7 +16,7 @@ class DatabaseHelper {
   }
 
   Future<Database> _initDb() async {
-    // Inicializa o sqflite_common_ffi para uso no Windows/Desktop
+    // desktop init
     sqfliteFfiInit();
     databaseFactory = databaseFactoryFfi;
 
@@ -26,16 +26,14 @@ class DatabaseHelper {
     return await databaseFactory.openDatabase(
       path,
       options: OpenDatabaseOptions(
-        version: 4, // ✅ aumente a versão sempre que mudar as tabelas
+        version: 4,
         onCreate: _onCreate,
         onUpgrade: _onUpgrade,
       ),
     );
   }
 
-  // ✅ Criação das tabelas
   Future<void> _onCreate(Database db, int version) async {
-    // Tabela de produtos
     await db.execute('''
       CREATE TABLE produtos (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -47,7 +45,6 @@ class DatabaseHelper {
       )
     ''');
 
-    // Tabela de vendas
     await db.execute('''
       CREATE TABLE vendas (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -61,45 +58,11 @@ class DatabaseHelper {
     ''');
   }
 
-  // ✅ Atualiza o banco se já existir uma versão anterior
   Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
     if (oldVersion < 4) {
-      // Remove tabelas antigas e recria tudo
       await db.execute('DROP TABLE IF EXISTS vendas');
       await db.execute('DROP TABLE IF EXISTS produtos');
       await _onCreate(db, newVersion);
     }
-  }
-
-  // ✅ Métodos para produtos
-  Future<int> inserirProduto(Map<String, dynamic> produto) async {
-    final db = await database;
-    return await db.insert('produtos', produto);
-  }
-
-  Future<List<Map<String, dynamic>>> listarProdutos() async {
-    final db = await database;
-    return await db.query('produtos');
-  }
-
-  Future<int> deletarProduto(int id) async {
-    final db = await database;
-    return await db.delete('produtos', where: 'id = ?', whereArgs: [id]);
-  }
-
-  // ✅ Métodos para vendas
-  Future<int> inserirVenda(Map<String, dynamic> venda) async {
-    final db = await database;
-    return await db.insert('vendas', venda);
-  }
-
-  Future<List<Map<String, dynamic>>> listarVendas() async {
-    final db = await database;
-    return await db.query('vendas');
-  }
-
-  Future<int> deletarVenda(int id) async {
-    final db = await database;
-    return await db.delete('vendas', where: 'id = ?', whereArgs: [id]);
   }
 }

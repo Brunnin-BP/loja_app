@@ -3,7 +3,7 @@ class Venda {
   int idProduto;
   int quantidade;
   double valorTotal;
-  String data;
+  String data; // ISO string
   String cliente;
 
   Venda({
@@ -37,3 +37,4 @@ class Venda {
     );
   }
 }
+

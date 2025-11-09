@@ -33,7 +33,7 @@ class Produto {
       categoria: map['categoria'] as String,
       preco: (map['preco'] as num).toDouble(),
       estoque: map['estoque'] as int,
-      descricao: map['descricao'] as String,
+      descricao: map['descricao'] as String? ?? '',
     );
   }
 }
